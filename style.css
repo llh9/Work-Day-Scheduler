@@ -57,6 +57,7 @@ textarea {
   color: white;
 }
 
+
 .grid {
   padding-top: 5%;
 }
@@ -68,6 +69,7 @@ textarea {
   border-bottom-right-radius: 15px;
   background-color: black;
   color: white;
+  min-height: 35px;
 }
 
 .saveBtn i:hover {

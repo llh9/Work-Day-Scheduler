@@ -10,6 +10,7 @@ function setTime() {
 }
 setTime();
 console.log(moment().format('LTS'));
+console.log(moment().hour());
 
 // setting up the grid 
 var j = 1;
@@ -23,8 +24,6 @@ for (var i = 3; i < 30; i++){
     gridPopul8r.attr("Class", "col ");
     gridPopul8r.attr("id", "Cell-" + id2String);
     appended2.append(gridPopul8r);
-
-    
 
     //setting up the first column
     
@@ -65,7 +64,6 @@ for (var i = 3; i < 30; i++){
         tasks.attr("id",  id2String + "Cell");
         tasks.attr("type", "text");
         tasks.attr("Class", "description");
-        tasks.css("background-color", "yellow");
         tasks.css("min-width", "100%");
 
         gridPopul8r.append(tasks);
@@ -97,29 +95,34 @@ for (var i = 3; i < 30; i++){
     };
 
 }
-var cellIds = ['2','5','8','11','14','17','20','23','26'];
-var timez = ['9','10','11','12','13','14','15','16','17'];
+console.log(moment().hour());
 
+var cellIds = ['2','5','8','11','14','17','20','23','26'];
+var timez = ['9','10','11','12','0','14','15','16','17'];
+var iPlus = 1;
+var iMinus = i; 
 for(var i = 0; i < 9; i++){
-   
-    if (timez == moment().hour()){
-        var highLightCell = "#Cell-" + cellIds[i];
-        console.log(highLightCell);
-        $(highLightCell).css('background-color', "#ff6961");
-        for(var j = 9-i; j <= 9; j++){
-            var iPlus = 1;
-            var iMinus = i;
+    console.log(i);
+    if (timez[i] == moment().hour()){
+        console.log("")
+        highLightCell = "#Cell-" + cellIds[i];
+    
+        $(highLightCell).css('background-color', "yellow");
+        for(var j = 0; j <= 9; j++){
             var highLightCell = "#Cell-" + cellIds[i + iPlus];
             $(highLightCell).css('background-color', "#77dd77");
-            iplus++;
-            var highLightCell = "#Cell-" + cellIds[i + iMinus];
-            $(highLightCell).css('background-color', "gray");
-            iMinus--;
+            iPlus++;
+            
         }
+      
     }
+    console.log(highLightCell);
 
     if (moment().hour() > 17){
         $('.description').css("background-color", "gray");
+    }
+    if (moment().hour() <= 17 && moment().hour() >= 5){
+        $('.description').css("background-color", "white");
     }
 
     if (moment().hour() < 5){
@@ -127,6 +130,7 @@ for(var i = 0; i < 9; i++){
     }
 
 }
+
 
 var saveButton = document.querySelectorAll(".saveBtn");
 
@@ -142,3 +146,4 @@ saveButton.forEach(saveButton => {
 
 localStorage.setItem("studentGrade", JSON.stringify(studentGrade));
 renderMessage();
+*/

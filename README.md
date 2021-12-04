@@ -39,11 +39,9 @@ From completing this project, I learned how to use third party web APIs and inco
     
 A given employee would use this application by going to the website from a browser, entering daily tasks, and saving tasks as they are entered which will save those tasks into local storage. 
     
-## [Walkthrough Video](https://watch.screencastify.com/v/U2QpCko7skGyMEGyo3ZA)
-    
 ### [Demo Screenshot 1](#demo-screenshot-1)
     
-![screenshot demo ](./SS1.PNG)
+![screenshot demo ](./Assets/WDS_SS.PNG)
     
 ## [Test](#test)
     

@@ -131,15 +131,13 @@ for(var i = 0; i < 9; i++){
 }
 
 
-var saveButton = document.querySelectorAll(".saveBtn");
+// var saveButton = document.querySelectorAll(".saveBtn");
 
-saveButton.forEach(saveButton => {
+// saveButton.forEach((saveButton) => {
 
-    saveButton.addEventListner('click', (e)=>{
-localStorage.setItem("studentGrade", JSON.stringify(studentGrade));
-
-    });
-
-});
+//     saveButton.addEventListner('click', (e)=>{
+//         localStorage.setItem("", JSON.stringify(studentGrade));
+//     });
+// });
 
 

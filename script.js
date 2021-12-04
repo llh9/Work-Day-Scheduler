@@ -17,7 +17,7 @@ var j = 1;
 var startTime = 9;
 for (var i = 3; i < 30; i++){
     var idNum = i - 2;
-    var id2String = JSON.parse(idNum);
+    var id2String = idNum.toString();
     console.log(id2String)
     var appended2 = $(".row");
     var gridPopul8r = $("<div>");
@@ -27,12 +27,11 @@ for (var i = 3; i < 30; i++){
 
     //setting up the first column
     
-    var noonOrNah = "AM";
+    var noonOrNot = "AM";
     if(i%3 == 0){
 
-      
         if(j >= 4){
-            noonOrNah = "PM";
+            noonOrNot = "PM";
         };
         if(j === 5){
            startTime = "1";
@@ -42,7 +41,7 @@ for (var i = 3; i < 30; i++){
         var tmCell = $("<h3>");
         tmCell.attr("id", id2String + "Cell");
         tmCell.attr("Class", "time-Block hour");
-        tmCell.text(startTime + ":00" + " " + noonOrNah);
+        tmCell.text(startTime + ":00" + " " + noonOrNot);
         gridPopul8r.append(tmCell);
         startTime++;
         gridPopul8r.attr("Class", "col-2");
@@ -137,13 +136,10 @@ var saveButton = document.querySelectorAll(".saveBtn");
 saveButton.forEach(saveButton => {
 
     saveButton.addEventListner('click', (e)=>{
-
-        console.log('someone hit me');
+localStorage.setItem("studentGrade", JSON.stringify(studentGrade));
 
     });
 
 });
 
-localStorage.setItem("studentGrade", JSON.stringify(studentGrade));
-renderMessage();
-*/
+
